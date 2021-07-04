@@ -1,0 +1,11 @@
+services:
+  traefik:
+    networks:
+      other-network:
+        aliases:
+          - registry.local
+
+networks:
+  other-network:
+    external: true
+    name: other-network
