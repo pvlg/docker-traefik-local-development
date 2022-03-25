@@ -1,6 +1,6 @@
 services:
   traefik:
-    image: traefik:v2.4
+    image: traefik:v2.6
     container_name: local-traefik
     restart: unless-stopped
     networks:
@@ -13,25 +13,6 @@ services:
       - ./traefik/config/traefik.yml:/etc/traefik/traefik.yml:ro
       - ./traefik/config/dynamic/:/etc/traefik/dynamic/:ro
       - ./traefik/certs:/etc/certs:ro
-
-  registry:
-    image: registry:2
-    container_name: local-registry
-    restart: unless-stopped
-    networks:
-      internal:
-    volumes:
-      - registry:/var/lib/registry
-    labels:
-      - "traefik.enable=true"
-      - "traefik.http.routers.local-registry.rule=Host(`registry.local`)"
-      - "traefik.http.routers.local-registry.tls=true"
-      - "traefik.http.services.local-registry.loadbalancer.server.port=5000"
-
-volumes:
-  registry:
-    external: true
-    name: local-registry
 
 networks:
   internal:
