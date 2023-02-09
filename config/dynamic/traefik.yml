@@ -1,0 +1,11 @@
+http:
+  routers:
+    local-traefik:
+      rule: "Host(`traefik.test`)"
+      tls: true
+      service: "api@internal"
+
+tls:
+  certificates:
+    - certFile: "/etc/certs/traefik.test.pem"
+      keyFile: "/etc/certs/traefik.test-key.pem"

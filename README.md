@@ -1,7 +1,21 @@
-`mkcert -install`
+### Install mkcert
 
-`cd traefik/certs`
+```shell
+mkcert -install
+```
 
-`mkcert traefik.local registry.local`
+### Generate certificates
 
-`docker-compose up -d`
+```shell
+cd certs
+
+mkcert traefik.test
+```
+
+### Run
+
+```shell
+export TRAEFIK_HUB_AGENT_TOKEN=token
+
+docker-compose up -d
+```

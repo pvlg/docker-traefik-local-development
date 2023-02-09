@@ -29,3 +29,14 @@ entryPoints:
           scheme: https
   https:
     address: ":443"
+
+experimental:
+  hub: true
+
+hub:
+  tls:
+    insecure: true
+
+metrics:
+  prometheus:
+    addRoutersLabels: true

@@ -1,4 +1,3 @@
 *
 !.gitignore
 !traefik.yml
-!registry.yml
