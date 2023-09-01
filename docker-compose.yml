@@ -12,22 +12,22 @@ services:
       - ./config/dynamic/:/etc/traefik/dynamic/:ro
       - ./certs:/etc/certs:ro
 
-  hub-agent:
-    image: ghcr.io/traefik/hub-agent-traefik:v1.0.0
-    container_name: traefik-hub-agent
-    restart: unless-stopped
-    networks:
-      - traefik
-    command:
-      - run
-      - --hub.token=${TRAEFIK_HUB_AGENT_TOKEN}
-      - --auth-server.advertise-url=http://hub-agent
-      - --traefik.host=traefik
-      - --traefik.tls.insecure=true
-    volumes:
-      - /var/run/docker.sock:/var/run/docker.sock:ro
-    depends_on:
-      - traefik
+#  hub-agent:
+#    image: ghcr.io/traefik/hub-agent-traefik:v1.0.0
+#    container_name: traefik-hub-agent
+#    restart: unless-stopped
+#    networks:
+#      - traefik
+#    command:
+#      - run
+#      - --hub.token=${TRAEFIK_HUB_AGENT_TOKEN}
+#      - --auth-server.advertise-url=http://hub-agent
+#      - --traefik.host=traefik
+#      - --traefik.tls.insecure=true
+#    volumes:
+#      - /var/run/docker.sock:/var/run/docker.sock:ro
+#    depends_on:
+#      - traefik
 
 networks:
   traefik:
