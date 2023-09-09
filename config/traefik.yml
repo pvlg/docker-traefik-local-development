@@ -30,9 +30,6 @@ entryPoints:
   https:
     address: ":443"
 
-experimental:
-  hub: true
-
 hub:
   tls:
     insecure: true
