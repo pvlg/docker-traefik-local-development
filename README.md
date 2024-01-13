@@ -9,7 +9,7 @@ mkcert -install
 ```shell
 cd certs
 
-mkcert traefik.test
+mkcert traefik.test *.traefik.test
 ```
 
 ### Run
