@@ -9,13 +9,14 @@ mkcert -install
 ```shell
 cd certs
 
-mkcert traefik.test *.traefik.test
+mkcert traefik.test
+mkcert *.docker.test
 ```
 
 ### Run
 
 ```shell
-export TRAEFIK_HUB_AGENT_TOKEN=token
+cp docker-compose.override.dist.yml docker-compose.override.yml
 
 docker-compose up -d
 ```

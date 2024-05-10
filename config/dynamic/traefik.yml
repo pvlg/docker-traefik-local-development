@@ -10,5 +10,5 @@ tls:
     - certFile: "/etc/certs/traefik.test.pem"
       keyFile: "/etc/certs/traefik.test-key.pem"
 
-    - certFile: "/etc/certs/_wildcard.traefik.test.pem"
-      keyFile: "/etc/certs/_wildcard.traefik.test-key.pem"
+    - certFile: "/etc/certs/_wildcard.docker.test.pem"
+      keyFile: "/etc/certs/_wildcard.docker.test-key.pem"
